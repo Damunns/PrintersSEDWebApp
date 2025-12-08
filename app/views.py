@@ -50,7 +50,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
-            return redirect('/about')
+            return redirect('/')
     else:
         form = BootstrapUserCreationForm()
     return render(
@@ -68,7 +68,7 @@ def update_printer(request,printer_id):
     try:
         printer = Printer.objects.get(pk=printer_id)
     except (KeyError, printer.DoesNotExist):
-        return render(request, 'app/about.html', {
+        return render(request, 'app/index.html', {
             'printer': printer,
             'error_message': "Printer not found.",
         })
@@ -82,32 +82,32 @@ def update_printer(request,printer_id):
             manufacture_date = parser.parse(request.POST['manufacture_date']).date()
         except (ValueError, TypeError):
             messages.error(request,f"Invalid date format - {request.POST['manufacture_date']}")
-            return redirect('/about')
+            return redirect('/')
         comments = request.POST['comments']
         
         printer.editPrinter(id=printer_id, brand=brand, model=model, location=location, ip_address=ip_address, mac_address=mac_address, manufacture_date=manufacture_date, comments=comments)
 
-        return redirect('/about')
+        return redirect('/')
 
 def add_printer(request):
     required_fields = ['brand', 'model', 'location', 'ip_address', 'mac_address', 'manufacture_date']
     for field in required_fields:
         if not request.POST.get(field) or request.POST.get(field).strip() == '':
             messages.error(request, f"Field '{field}' cannot be empty.")
-            return redirect('/about')
+            return redirect('/')
 
     try:
         validate_ipv46_address(request.POST['ip_address'])
     except ValidationError:
         messages.error(request, f"Invalid IP address - {request.POST['ip_address']}")
-        return redirect('/about')
+        return redirect('/')
 
     try:
         manufacture_date = parser.parse(request.POST['manufacture_date']).date()
         manufacture_date_str = manufacture_date.strftime('%Y-%m-%d')  # Convert to string
     except (ValueError, TypeError):
         messages.error(request, f"Invalid date format - {request.POST['manufacture_date']}")
-        return redirect('/about')
+        return redirect('/')
 
     printer = Printer(
         brand=request.POST['brand'],
@@ -119,16 +119,16 @@ def add_printer(request):
         comments=request.POST['comments']
     )
     printer.save()
-    return redirect('/about')
+    return redirect('/')
 
 def delete_printer(request, printer_id):
     # Manually check if the user has the required permission
     if not request.user.has_perm('app.delete_printer'):
         # Set a flash message for lack of permissions
         messages.error(request, "You do not have the required permissions to delete this printer.")
-        return redirect('/about')  # Redirect to the "about" page
+        return redirect('/')  # Redirect to the "home" page
 
     printer = get_object_or_404(Printer, pk=printer_id)
     printer.delete()
     messages.success(request, "Printer deleted successfully.")
-    return redirect('/about')
+    return redirect('/')
