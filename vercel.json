@@ -1,0 +1,25 @@
+{
+  "builds": [
+    {
+      "src": "PrintersSEDWebApp/wsgi.py",
+      "use": "@vercel/python",
+      "config": { 
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.12.6" 
+      }
+    },
+    {
+      "src": "build.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+       }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "PrintersSEDWebApp/wsgi.py"
+    }
+  ]
+}
