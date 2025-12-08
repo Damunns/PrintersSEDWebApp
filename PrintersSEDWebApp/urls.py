@@ -11,7 +11,6 @@ from app import forms, views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
     path('login/',
          LoginView.as_view
          (
