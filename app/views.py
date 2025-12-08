@@ -27,7 +27,7 @@ def login(request):
             'year':datetime.now().year,
         }
     )
-@login_required
+#@login_required
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
