@@ -1,4 +1,4 @@
-
+"""
 from django.urls import path
 from . import views
 
@@ -8,3 +8,4 @@ urlpatterns = [
     path('add_printer/', views.add_printer, name='add_printer'),
     path('delete_printer/<printer_id>/', views.delete_printer, name='delete_printer'),
 ]
+"""
