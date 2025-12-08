@@ -4,7 +4,7 @@
 
 <h2>{{ title }}</h2>
 <p>{{ message }}</p>
-<!--<div class="about-container">
+<div class="about-container">
     {% csrf_token %}
     <div class='table-title-container'>
         <h1>Printers List</h1>
@@ -31,7 +31,7 @@
             </thead>
             <tbody>
             
-    --><!-- Loop through the printers and display each one --><!--
+                <!-- Loop through the printers and display each one -->
                 {% for printer in printers %}
                 <tr>
                     <form>
@@ -57,9 +57,6 @@
                 {% endfor %}
             </tbody>
         </table>
-        {% else %}
-        <p>No printers found.</p>
-        {% endif %}
     </div>
     {% for printer in printers %}
     <div class="modal edit-modal-{{ printer.id }}" tabindex="-1" role="dialog">
@@ -169,7 +166,10 @@
         </div>
     </div>
     {% endfor %}
+    {% else %}
+    <p>No printers found.</p>
+    {% endif %}
 
 </div>
--->
+
 {% endblock %}

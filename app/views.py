@@ -113,7 +113,7 @@ def add_printer(request):
         brand=request.POST['brand'],
         model=request.POST['model'],
         location=request.POST['location'],
-        ip_address=ip_address,
+        ip_address=request.POST['ip_address'],
         mac_address=request.POST['mac_address'],
         manufacture_date=manufacture_date_str,
         comments=request.POST['comments']
