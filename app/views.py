@@ -68,7 +68,7 @@ def update_printer(request,printer_id):
     try:
         printer = Printer.objects.get(pk=printer_id)
     except (KeyError, printer.DoesNotExist):
-        return render(request, 'app/index.html', {
+        return render(request, '/', {
             'printer': printer,
             'error_message': "Printer not found.",
         })

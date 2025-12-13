@@ -43,7 +43,6 @@
                         <td>{{ printer.mac_address }}</td>
                         <td>{{ printer.manufacture_date }}</td>
                         <td>{{ printer.comments }}</td>
-
                         <td>
                             <button value="Delete" class="icon-button fa fa-solid fa-trash fa-3x" data-toggle="modal"
                                 data-target=".confirmation-modal-{{ printer.id }}" name="removeRows"></button>
@@ -169,7 +168,6 @@
     {% else %}
     <p>No printers found.</p>
     {% endif %}
-
 </div>
 
 {% endblock %}
