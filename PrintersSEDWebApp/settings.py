@@ -10,14 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
-from dotenv import load_dotenv
+import os, sys
 from urllib.parse import urlparse, parse_qsl
 import posixpath
 import dj_database_url
 from decouple import config, Csv
 
-load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -89,23 +87,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'PrintersSEDWebApp.wsgi.application'
 
 # Database
-"""
-tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': tmpPostgres.path.replace('/', ''),
-        'USER': tmpPostgres.username,
-        'PASSWORD': tmpPostgres.password,
-        'HOST': tmpPostgres.hostname,
-        'PORT': 5432,
-        'OPTIONS': dict(parse_qsl(tmpPostgres.query)),
-    }
-}
-"""
 DATABASES = {
     'default': dj_database_url.config(default=config('POSTGRES_URL', default='')),
 }
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',
+    }
 
 if not DATABASES['default']:
     DATABASES = {
