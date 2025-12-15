@@ -17,13 +17,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Install flake8
+      - name: Install ruff
         run: |
-          pip install flake8
+          pip install ruff
 
       - name: Run Linter
         run: |
-          flake8
+          ruff check .
   tests:
     runs-on: ubuntu-latest
     

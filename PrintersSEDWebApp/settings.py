@@ -87,28 +87,33 @@ TEMPLATES = [
 WSGI_APPLICATION = 'PrintersSEDWebApp.wsgi.application'
 
 # Database
-DATABASES = {
-    'default': dj_database_url.config(default=config('POSTGRES_URL', default='')),
-}
-
 if 'test' in sys.argv:
-    DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': ':memory:',
+    # Use SQLite in-memory database for tests
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.config(default=config('DATABASE_URL', default='')),
     }
 
-if not DATABASES['default']:
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'printers-sed-webapp-postgres',
-        'HOST': 'ep-aged-grass-abj9o1wz-pooler.eu-west-2.aws.neon.tech',
-        'USER':'neondb_owner',
-        'PASSWORD': 'npg_qs7BVgU0HEGu',
-        # 'HOST': 'localhost',
-        'PORT': '5432'
+    if not DATABASES['default']:
+        DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'printers-sed-webapp-postgres',
+            'HOST': 'ep-aged-grass-abj9o1wz-pooler.eu-west-2.aws.neon.tech',
+            'USER':'neondb_owner',
+            'PASSWORD': 'npg_qs7BVgU0HEGu',
+            'PORT': '5432',
+            'OPTIONS': {
+                'sslmode': 'require',
+            }
+        }
     }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

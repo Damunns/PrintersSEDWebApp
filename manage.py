@@ -6,6 +6,9 @@ Command-line utility for administrative tasks.
 # https://docs.djangoproject.com/en/2.1/ref/django-admin/
 """
 
+#.\env\Scripts\activate
+#.\envhome\Scripts\activate
+
 import os
 import sys
 
