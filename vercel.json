@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "PrintersSEDWebApp/wsgi.py",
+      "src": "app/wsgi.py",
       "use": "@vercel/python",
       "config": { 
         "maxLambdaSize": "15mb",
@@ -19,7 +19,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "PrintersSEDWebApp/wsgi.py"
+      "dest": "app/wsgi.py"
     }
   ]
 }

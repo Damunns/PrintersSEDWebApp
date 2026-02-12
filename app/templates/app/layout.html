@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - Printer Management</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
-    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'content/site.css' %}" />
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="{% static 'app/images/icon.png' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/icon.png' %}" />
     {% if debug %}
-    <script src="http://127.0.0.1:35729/livereload.js"></script>
     {% endif %}
 </head>
 
@@ -50,9 +48,11 @@
         </footer>
     </div>
 
-    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
-    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
-    <script src="{% static 'app/scripts/respond.js' %}"></script>
+    <script src="{% static 'scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'scripts/respond.js' %}"></script>
+    <script src="http://127.0.0.1:35729/livereload.js"></script>
+    <script src="{% static 'scripts/modernizr-2.6.2.js' %}"></script>
 {% block scripts %}{% endblock %}
 
 </body>
