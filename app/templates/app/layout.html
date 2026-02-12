@@ -22,11 +22,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">Printer Management</a>
+                <a href="{% url 'home' %}" class="navbar-brand">Printer Management</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'home' %}">Home</a></li>
                 </ul>
                 {% include 'app/loginpartial.html' %}
             </div>
