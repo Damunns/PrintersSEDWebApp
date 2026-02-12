@@ -16,6 +16,15 @@ textarea {
     max-width: 280px;
 }
 
+.icon-button {
+    border: none;
+    background-color: transparent;
+    transition: all 0.2s;
+}
+.icon-button:hover {
+    color:indianred;
+}
+
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;
