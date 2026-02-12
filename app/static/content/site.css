@@ -1,3 +1,6 @@
+* {
+    font-family: Tahoma, sans-serif;
+}
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -16,13 +19,32 @@ textarea {
     max-width: 280px;
 }
 
+.add-new-printer{
+    display:flex;
+    align-items: center;
+    font-size:larger;
+    gap:5%;
+}
+
+.printer-table-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.printer-table-title h1,p {
+    margin: 0;
+}
 .icon-button {
     border: none;
     background-color: transparent;
     transition: all 0.2s;
 }
 .icon-button:hover {
-    color:indianred;
+    color:rgb(144, 144, 144);
+}
+.icon-button-delete:hover {
+    color:crimson;
+    transform: scale(1.4);
 }
 
 /* styles for validation helpers */

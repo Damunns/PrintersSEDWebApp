@@ -6,11 +6,11 @@
 <p>{{ message }}</p>
 <div class="about-container">
     {% csrf_token %}
-    <div class='table-title-container'>
+    <div class="table-title-container printer-table-title">
         <h1>Printers List</h1>
         <div class="table-controls-container">
-            <td><button value="Add" class="icon-button fa fa-solid fa-plus fa-3x" data-toggle="modal"
-                    data-target=".add-modal" name="addRows"></button></td>
+            <td><button value="Add" class="btn btn-default add-new-printer" data-toggle="modal"
+                    data-target=".add-modal" name="addRows"><p>Add new printer</p><i class="fa fa-solid fa-plus fa-2x"></i></button></td>
         </div>
     </div>
     
@@ -44,7 +44,7 @@
                         <td>{{ printer.manufacture_date }}</td>
                         <td>{{ printer.comments }}</td>
                         <td>
-                            <button value="Delete" class="icon-button fa fa-solid fa-trash fa-3x" data-toggle="modal"
+                            <button value="Delete" class="icon-button icon-button-delete fa fa-solid fa-trash fa-3x" data-toggle="modal"
                                 data-target=".confirmation-modal-{{ printer.id }}" name="removeRows"></button>
                         </td>
                         <td>
