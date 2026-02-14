@@ -4,7 +4,7 @@
 
 <h2>{{ title }}</h2>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <section id="loginForm">
             <form action="." method="post" class="form-horizontal">
                 {% csrf_token %}
@@ -33,7 +33,8 @@
                 {% endif %}
             </form>
             <div style="margin-top: 1em;">
-                <a href="{% url 'register' %}" class="btn btn-secondary">Register</a>
+                Don't have an account?
+                <a href="{% url 'register' %}">Register here</a>
             </div>
         </section>
     </div>
