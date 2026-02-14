@@ -19,13 +19,6 @@ textarea {
     max-width: 280px;
 }
 
-.add-new-printer{
-    display:flex;
-    align-items: center;
-    font-size:larger;
-    gap:5%;
-}
-
 .printer-table-title{
     display: flex;
     justify-content: space-between;
@@ -42,9 +35,25 @@ textarea {
 .icon-button:hover {
     color:rgb(144, 144, 144);
 }
+
+.icon-button-add {
+    width: 100px;
+}
+
+@keyframes trash-shake {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(15deg);}
+  50% {transform: rotate(0deg);}
+  75% {transform: rotate(-15deg);}
+  100% {transform: rotate(0deg);}
+}
+
 .icon-button-delete:hover {
     color:crimson;
-    transform: scale(1.4);
+    animation-name: trash-shake;
+    animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 /* styles for validation helpers */
