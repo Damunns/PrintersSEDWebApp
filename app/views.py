@@ -78,11 +78,25 @@ def update_printer(request,printer_id):
         location = request.POST['location']
         ip_address = request.POST['ip_address']
         mac_address = request.POST['mac_address']
+
+        required_fields = ['brand', 'model', 'location', 'ip_address', 'mac_address', 'manufacture_date']
+        for field in required_fields:
+            if not request.POST.get(field) or request.POST.get(field).strip() == '':
+                messages.error(request, f"Field '{field}' cannot be empty.")
+                return redirect('/')
+
+        try:
+            validate_ipv46_address(ip_address)
+        except ValidationError:
+            messages.error(request, f"Invalid IP address - {ip_address}")
+            return redirect('/')
+
         try:
             manufacture_date = parser.parse(request.POST['manufacture_date']).date()
         except (ValueError, TypeError):
             messages.error(request,f"Invalid date format - {request.POST['manufacture_date']}")
             return redirect('/')
+        
         comments = request.POST['comments']
         
         printer.editPrinter(id=printer_id, brand=brand, model=model, location=location, ip_address=ip_address, mac_address=mac_address, manufacture_date=manufacture_date, comments=comments)

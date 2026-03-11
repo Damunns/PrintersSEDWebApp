@@ -78,6 +78,13 @@ textarea {
     animation-timing-function: linear;
 }
 
+.error {
+    color: crimson;
+    background-color: #ebbfc3;
+    padding: 8px;
+    border-radius: 10px;
+}
+
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;

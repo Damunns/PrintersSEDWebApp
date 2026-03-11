@@ -9,7 +9,7 @@ class Printer(models.Model):
     brand = models.CharField(max_length=100, blank=False, null=False, default="Brand")
     model = models.CharField(max_length=100, blank=False, null=False, default="Model")
     location = models.CharField(max_length=255, blank=False, null=False, default="Location")
-    ip_address = models.GenericIPAddressField(blank=False, null=False, default="0.0.0.0")
+    ip_address = models.CharField(blank=False, null=False, default="0.0.0.0")
     mac_address = models.CharField(max_length=17, blank=False, null=False, default="00:00:00:00:00:00")  # MAC addresses are typically 17 characters long
     manufacture_date = models.CharField(max_length=100, blank=False, null=False, default="1900-00-00")
     comments = models.TextField(blank=True, null=True, default="Comments")

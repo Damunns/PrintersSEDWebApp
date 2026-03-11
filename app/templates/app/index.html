@@ -10,7 +10,7 @@
         <h1>Printers List</h1>
         <div class="table-controls-container">
             <button value="Add" data-toggle="modal" class="icon-button icon-button-add" data-target=".add-modal" name="addRows">
-                <i class="fa fa-solid fa-plus fa-4x"></i>
+                <i class="fa fa-solid fa-plus fa-3x"></i>
             </button>
         </div>
     </div>
@@ -45,11 +45,11 @@
                         <td>{{ printer.manufacture_date }}</td>
                         <td>{{ printer.comments }}</td>
                         <td>
-                            <button type="button" value="Delete" class="icon-button icon-button-delete fa fa-solid fa-trash fa-3x" data-toggle="modal"
+                            <button type="button" value="Delete" class="icon-button icon-button-delete fa fa-solid fa-trash fa-2x" data-toggle="modal"
                                 data-target=".confirmation-modal-{{ printer.id }}" name="removeRows"></button>
                         </td>
                         <td>
-                            <button type="button" value="Update" class="icon-button fa fa-solid fa-pencil fa-3x" name="editRows"
+                            <button type="button" value="Update" class="icon-button fa fa-solid fa-pencil fa-2x" name="editRows"
                                 data-toggle="modal" data-target=".edit-modal-{{ printer.id }}"></button>
                         </td>
                     </form>
@@ -135,7 +135,7 @@
                         <input type="text" class="form-control" id="comments" name="comments" placeholder="Comments">
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" name="addRows">Save changes</button>
+                    <button type="submit" class="btn btn-success" name="addRows">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
                 </form>
