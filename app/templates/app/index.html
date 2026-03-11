@@ -9,7 +9,8 @@
     <div class="table-title-container printer-table-title">
         <h1>Printers List</h1>
         <div class="table-controls-container">
-            <button value="Add" data-toggle="modal" class="icon-button icon-button-add" data-target=".add-modal" name="addRows">
+            <button value="Add" data-toggle="modal" class="icon-button icon-button-add" 
+                    title="Add Printer" data-target=".add-modal" name="addRows">
                 <i class="fa fa-solid fa-plus fa-3x"></i>
             </button>
         </div>
@@ -17,7 +18,7 @@
     
     {% if printers %}
     <div class='table-container'>
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -28,6 +29,8 @@
                     <th>MAC Address</th>
                     <th>Manufacture Date</th>
                     <th>Comments</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -46,11 +49,11 @@
                         <td>{{ printer.comments }}</td>
                         <td>
                             <button type="button" value="Delete" class="icon-button icon-button-delete fa fa-solid fa-trash fa-2x" data-toggle="modal"
-                                data-target=".confirmation-modal-{{ printer.id }}" name="removeRows"></button>
+                                title="Delete Printer" data-target=".confirmation-modal-{{ printer.id }}" name="removeRows"></button>
                         </td>
                         <td>
                             <button type="button" value="Update" class="icon-button fa fa-solid fa-pencil fa-2x" name="editRows"
-                                data-toggle="modal" data-target=".edit-modal-{{ printer.id }}"></button>
+                                title="Edit Printer Values" data-toggle="modal" data-target=".edit-modal-{{ printer.id }}"></button>
                         </td>
                     </form>
                 </tr>

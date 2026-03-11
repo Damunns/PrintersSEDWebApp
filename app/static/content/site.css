@@ -10,7 +10,7 @@ body {
 }
 
 hr {
-    border-color: black
+    border-color: black;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -26,7 +26,7 @@ textarea {
 }
 
 .floating-box {
-    /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px, rgba(10, 37, 64, 0.35) 0px -5px 10px 0px inset; */
+    box-shadow: rgba(17, 12, 46, 0.2) 0px 20px 40px 0px;
     border-radius: 30px;
     padding: 20px 50px 50px 50px;
     background-color: white;
@@ -35,10 +35,16 @@ textarea {
 }
 
 .navbar {
-    /* box-shadow: rgba(17, 12, 46, 0.2) 0px 48px 90px 0px, rgba(10, 37, 64, 0.2) 0px -5px 10px 0px inset; */
-    background-color: #dedede !important;
+    box-shadow: rgba(17, 12, 46, 0.1) 0px 20px 30px 0px;
+    background-color: #bcc4d1 !important;
     border-radius: 25px;
     margin: 10px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+    color:#2c3344 !important;
 }
 
 .printer-table-title{
