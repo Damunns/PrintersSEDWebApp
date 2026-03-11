@@ -45,11 +45,11 @@
                         <td>{{ printer.manufacture_date }}</td>
                         <td>{{ printer.comments }}</td>
                         <td>
-                            <button value="Delete" class="icon-button icon-button-delete fa fa-solid fa-trash fa-3x" data-toggle="modal"
+                            <button type="button" value="Delete" class="icon-button icon-button-delete fa fa-solid fa-trash fa-3x" data-toggle="modal"
                                 data-target=".confirmation-modal-{{ printer.id }}" name="removeRows"></button>
                         </td>
                         <td>
-                            <button value="Update" class="icon-button fa fa-solid fa-pencil fa-3x" name="editRows"
+                            <button type="button" value="Update" class="icon-button fa fa-solid fa-pencil fa-3x" name="editRows"
                                 data-toggle="modal" data-target=".edit-modal-{{ printer.id }}"></button>
                         </td>
                     </form>
@@ -158,7 +158,7 @@
                     <p>Do you wish to proceed</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Delete</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
                 </form>
