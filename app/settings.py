@@ -62,6 +62,8 @@ MIDDLEWARE = [
     'livereload.middleware.LiveReloadScript',
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 ROOT_URLCONF = 'app.urls'
