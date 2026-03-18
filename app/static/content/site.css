@@ -91,6 +91,13 @@ textarea {
     border-radius: 10px;
 }
 
+.success {
+    color: green;
+    background-color: #d4edda;
+    padding: 8px;
+    border-radius: 10px;
+}
+
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;
