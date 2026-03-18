@@ -25,9 +25,6 @@ jobs:
         run: |
           ruff check .
           
-      - name: Run collectstatic
-        run: |
-          python manage.py collectstatic --noinput
   tests:
     runs-on: ubuntu-latest
     

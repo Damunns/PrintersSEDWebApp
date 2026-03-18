@@ -1,0 +1,124 @@
+* {
+    font-family: Tahoma, sans-serif;
+}
+body {
+    padding-top: 70px;
+    padding-bottom: 20px;
+    /* background: linear-gradient(to bottom, #ffffff, #87aac4); */
+    background:rgb(243, 243, 243);
+    background-attachment: fixed;
+}
+
+hr {
+    border-color: black;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.floating-box {
+    box-shadow: rgba(17, 12, 46, 0.2) 0px 20px 40px 0px;
+    border-radius: 30px;
+    padding: 20px 50px 50px 50px;
+    background-color: white;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.navbar {
+    box-shadow: rgba(17, 12, 46, 0.1) 0px 20px 30px 0px;
+    background-color: #bcc4d1 !important;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+    color:#2c3344 !important;
+}
+
+.printer-table-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.printer-table-title h1,p {
+    margin: 0;
+}
+.icon-button {
+    border: none;
+    background-color: transparent;
+    transition: all 0.2s;
+}
+.icon-button:hover {
+    color:rgb(144, 144, 144);
+}
+
+.icon-button-add {
+    width: 100px;
+}
+
+@keyframes trash-shake {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(15deg);}
+  50% {transform: rotate(0deg);}
+  75% {transform: rotate(-15deg);}
+  100% {transform: rotate(0deg);}
+}
+
+.icon-button-delete:hover {
+    color:crimson;
+    animation-name: trash-shake;
+    animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.error {
+    color: crimson;
+    background-color: #ebbfc3;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.success {
+    color: green;
+    background-color: #d4edda;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
